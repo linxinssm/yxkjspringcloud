@@ -1,0 +1,5 @@
+# Project exclude paths
+/lxcommon/target/
+/lxorder/target/
+/lxproduct/target/
+/lxuser/target/
