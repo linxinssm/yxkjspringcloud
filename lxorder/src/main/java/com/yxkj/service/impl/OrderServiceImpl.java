@@ -21,4 +21,12 @@ public class OrderServiceImpl implements OrderService {
         }
         return null;
     }
+
+    @Override
+    public boolean saveOrder(Shorder shorder) {
+        Shorder save = orderDao.save(shorder);
+        System.out.println("哈哈哈哈 "+save);
+
+        return ObjectUtils.isEmpty(save) ? false : true;
+    }
 }

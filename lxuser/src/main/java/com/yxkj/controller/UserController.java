@@ -25,7 +25,7 @@ public class UserController {
         return "Holler , world!!";
     }
 
-    @ApiOperation("测试方法hello")
+    @ApiOperation("查询用户")
     @ApiImplicitParams(value={
             @ApiImplicitParam(name="id",value="用户ID",required = true)
     })

@@ -36,6 +36,11 @@
             <version>5.1.38</version>
         </dependency>
 
+        <!--添加Nacos客户端 的依赖-->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+        </dependency>
     </dependencies>
 
 </project>

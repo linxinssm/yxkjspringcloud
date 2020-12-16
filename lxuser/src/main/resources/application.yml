@@ -2,8 +2,12 @@ server:
   port: 8071
 
 spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.188.146:8848
   application:
-    name: user-service
+    name: service-user
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/ms_cdyx?serverTimezone=UTC&characterEncoding=utf-8

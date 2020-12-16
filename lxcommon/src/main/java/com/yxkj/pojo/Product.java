@@ -10,7 +10,7 @@ import javax.persistence.Id;
 
 @Entity(name = "product")
 @Data
-public class product {
+public class Product {
 
     @Id//必须加
     @GeneratedValue(strategy = GenerationType.IDENTITY)
