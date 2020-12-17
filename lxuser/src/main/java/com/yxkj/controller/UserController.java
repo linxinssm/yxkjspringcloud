@@ -6,13 +6,16 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@RequestMapping("use")
 @Api(tags = "用户测试")
+@Slf4j
 public class UserController {
 
     @Autowired
@@ -22,7 +25,8 @@ public class UserController {
 
     @RequestMapping("mes")
     public  String getUser(){
-        return "Holler , world!!";
+
+        return userService.getUser();
     }
 
     @ApiOperation("查询用户")
@@ -31,6 +35,7 @@ public class UserController {
     })
     @RequestMapping("mes1/{id}")
     public User getUserBy(@PathVariable("id") int uid){
+        log.info("{}用户查询成功",uid);
         return userService.getUserBy(uid);
     }
 }

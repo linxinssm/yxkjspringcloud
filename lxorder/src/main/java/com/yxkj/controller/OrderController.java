@@ -82,7 +82,7 @@ public class OrderController {
         //在yml中可以进行负载均衡的策略设置
         Product product1 = restTemplate.getForObject("http://service-product/pro1/"+pid, Product.class);
 
-        User user = restTemplate.getForObject("http://service-user/mes1/" + id, User.class);
+        User user = restTemplate.getForObject("http://service-user/use/mes1/" + id, User.class);
 
         log.info("查询到的商品信息{}...", JSON.toJSONString(product1));
 
@@ -106,5 +106,4 @@ public class OrderController {
         log.info("订单生成成功");
         return  shorder;
     }
-
 }

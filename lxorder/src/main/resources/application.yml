@@ -1,11 +1,17 @@
 server:
   port: 8091
+  tomcat:
+    max-threads: 10
 
 spring:
   cloud:
     nacos:
       discovery:
         server-addr: 192.168.188.146:8848
+    sentinel:
+      transport:
+        dashboard: localhost:8080  #指定控制台服务地址
+        port: 9999 #跟控制台交流端口 , 随意指定一个没使用的端口
   application:
     name: service-order
   datasource:

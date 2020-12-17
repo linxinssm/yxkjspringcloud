@@ -3,6 +3,10 @@ server:
 
 spring:
   cloud:
+    sentinel:
+      transport:
+        dashboard: localhost:8080  #指定控制台服务地址
+        port: 9999 #跟控制台交流端口 , 随意指定一个没使用的端口
     nacos:
       discovery:
         server-addr: 192.168.188.146:8848
@@ -19,3 +23,8 @@ spring:
         hbm2ddl:
           auto: update
         dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+logging:
+  path: G:/log/ #指定存放文件的存放路径
+  file: G:/log/user #指定日志文件名
+  pattern:
+    console: "%d - %msg%n" #格式只输出时间和内容

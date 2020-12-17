@@ -16,4 +16,9 @@ public class UserServiceImpl  implements UserService {
 
         return userDao.findById(uid).get();
     }
+
+    @Override
+    public String getUser() {
+        return "helloworld!!!";
+    }
 }
