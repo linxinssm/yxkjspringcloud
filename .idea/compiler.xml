@@ -6,10 +6,10 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="lxcommon" />
-        <module name="lxproduct" />
-        <module name="lxorder" />
         <module name="lxuser" />
+        <module name="lxcommon" />
+        <module name="lxorder" />
+        <module name="lxproduct" />
       </profile>
     </annotationProcessing>
   </component>
