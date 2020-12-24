@@ -1,0 +1,24 @@
+server:
+  port: 7000
+
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.188.146:8848 #将Gateway注册到nacos
+    gateway:
+      discovery:
+        locator:
+          enabled: true #让Gateway从nacos中获取服务信息
+      routes:  #可以配置多个路由
+        - id: product_route #当前路由的标识唯一
+          #uri: http://localhost:8081 #请求最终要被转发到的地址
+          uri: lb://service-product  #lb 表示负载均衡 +具体微服务的标识 只是单纯的负载均衡  不是访问路径的一部分
+          order: 1 #路由的优先级,数越小优先级越高
+          predicates: #断言 数组(条件判断 , 转发请求需要满足的条件 , 不满足就不转发)
+            - Path=/linxin/** #当请求路径满足path ,路由才会正常转发
+          filters: #过滤器在请求传递过程中对请求做一些手脚 (数组)
+            - StripPrefix=1 #在请求转发之前去掉一层路径
+
