@@ -2,6 +2,7 @@ package com.yxkj.controller;
 
 
 import com.alibaba.csp.sentinel.annotation.SentinelResource;
+import com.yxkj.pojo.Product;
 import com.yxkj.service.OrderService;
 import com.yxkj.service.ProductService;
 import com.yxkj.service.UserService;
@@ -9,6 +10,7 @@ import com.yxkj.service.exceptionhandler.BlockHandlerException;
 import com.yxkj.service.exceptionhandler.FallBackException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -24,14 +26,13 @@ public class OrderSentinelResourceController {
     @Autowired
     private UserService userService;
 
-    @RequestMapping("mes")
+    @RequestMapping("mes/{pid}")
     @SentinelResource(value = "mes",
             blockHandler = "blockHandler",
             fallback = "fallback")
-    public  String  getMes(String name , int age){
+    public  String  getMes(String name , int age , @PathVariable int pid){
 
-        int i = 1/0;
-
+        Product product = productService.getProduct(pid);
         return name + ":::" + age;
     }
 

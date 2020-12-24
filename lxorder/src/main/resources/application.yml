@@ -38,3 +38,7 @@ product-service: #  调用的是提供者的名称
     ReadTimeout: 1000 #请求处理的超时时间
     OkToRetryOnAllOperations: true #对所有请求都进行重试
     MaxAutoRetriesNextServer: 2 #切换实例的重试次数
+#开启Feign对sentinel的支持
+feign:
+  sentinel:
+    enabled: true

@@ -25,7 +25,6 @@ public class ProductController {
 
         log.info("查询商品信息");
         System.out.println(port);
-
         return productService.grtProDuct(pid);
     }
 

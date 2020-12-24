@@ -13,7 +13,6 @@
 
 
     <dependencies>
-
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
@@ -23,6 +22,10 @@
             <artifactId>lxcommon</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
-
+        <!--添加Nacos客户端 的依赖-->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+        </dependency>
     </dependencies>
 </project>
